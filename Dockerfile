@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:17.04
 
 ENV PGPOOL2_VERSION 3.7.1
 ENV POSTGRESQL_VERSION 9.6
@@ -21,7 +21,7 @@ RUN apt-get update \
         memcached \
 	&& rm -rf /var/lib/apt/lists/*
 
-RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main" >> /etc/apt/sources.list.d/pgdg.list \
+RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ zesty-pgdg main" >> /etc/apt/sources.list.d/pgdg.list \
     && wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - \
     && apt-get update \
     && apt-get install  -y --no-install-recommends  \
